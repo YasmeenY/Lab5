@@ -1,0 +1,37 @@
+
+/*
+This program will return the number of prime numbers in the interval a ≤ x ≤ b.
+*/
+#include <iostream>
+using namespace std;
+int countPrimes(int a, int b);
+int main(){
+int a,b;
+cout<<"Enter lower limit: ";
+cin>>a;
+cout<<"Enter upper limit: ";
+cin>>b;
+cout<<countPrimes(a,b);
+return 0;
+
+}
+int countPrimes(int a, int b)
+{
+int flag,count=0;
+while (a<=b) //starts from lower limit to upper limit
+{
+flag = 0;
+for(int i=2;i<=a/2; ++i)
+{
+if(a%i==0)
+{
+flag=1;
+break;
+}
+}
+if(flag==0&&a>1) //checks if a is greater than 1
+count++;
+a++;
+}
+return count;
+}
